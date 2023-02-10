@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.AlbumDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/main_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/arrow_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/arrow_back"
+                    android:elevation="10dp"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/album_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:src="@drawable/default_image"/>
+
+                <TextView
+                    android:id="@+id/album_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rock"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="#BFBFBF"
+                    android:layout_marginTop="120dp"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/album_artist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Tenacious D"
+                    android:layout_below="@id/album_title"
+                    android:textSize="18sp"
+                    android:textColor="#BFBFBF"
+                    android:layout_centerHorizontal="true" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/genre_list_rv"
+                    android:layout_below="@id/album_image"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/album_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/genre_list_rv"
+                    android:layout_marginTop="32dp"
+                    android:gravity="start"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:textSize="18sp"
+                    android:textColor="#000" />
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:indeterminateTint="@color/black"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</ScrollView>

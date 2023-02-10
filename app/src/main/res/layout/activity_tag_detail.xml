@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".Activities.TagDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/main_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/arrow_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_back" />
+
+                <TextView
+                    android:id="@+id/tag_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rock"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:textColor="#000"
+                    android:layout_below="@id/arrow_back"
+                    android:layout_marginTop="16dp"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/tag_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tag_name"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:layout_marginTop="16dp"
+                    android:layout_centerHorizontal="true"/>
+
+                <LinearLayout
+                    android:id="@+id/tabs_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_below="@id/tag_description"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/albums_area"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/albums_area_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="ALBUMS" />
+
+                        <View
+                            android:id="@+id/albums_area_line"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/purple_700" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/artists_area"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/artists_area_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="ARTISTS" />
+
+                        <View
+                            android:id="@+id/artists_area_line"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"
+                            android:background="@color/purple_700" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tracks_area"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tracks_area_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="TRACKS" />
+
+                        <View
+                            android:id="@+id/tracks_area_line"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"
+                            android:background="@color/purple_700" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tag_details_tab_rv"
+                    android:layout_below="@id/tabs_area"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:indeterminateTint="@color/black"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</ScrollView>

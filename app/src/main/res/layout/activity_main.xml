@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".Activities.TagListActivity">
+
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="musicwiki"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:textColor="#000"
+            android:layout_marginTop="36dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/welcome_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="welcome!"
+            android:layout_below="@id/heading"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginTop="26dp"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:id="@+id/genre_image_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome_txt"
+            android:layout_marginTop="6dp"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/genre_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose a genre to start with"
+                android:textSize="16sp"
+                android:textColor="#000"/>
+
+            <ImageView
+                android:id="@+id/genre_drop_down_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_down"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/genre_rv"
+            android:layout_below="@id/genre_image_area"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:indeterminateTint="@color/black"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>
